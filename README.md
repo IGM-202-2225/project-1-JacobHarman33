@@ -4,8 +4,8 @@
 
 ### Student Info
 
--   Name: YOUR NAME
--   Section: ##
+-   Name: Jacob Harman
+-   Section: 2 (Tues/Thurs 9:30 - 10:45)
 
 ## Game Design
 
