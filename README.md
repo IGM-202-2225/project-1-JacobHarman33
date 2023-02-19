@@ -22,18 +22,28 @@ _A brief explanation of your game. Inculde what is the objective for the player.
 ### Controls
 
 -   Movement
-    -   Up: 
-    -   Down: 
-    -   Left: 
-    -   Right: 
--   Fire: 
+    -   Up: Up Arrow/W
+    -   Down: Down Arrow/S
+    -   Left: Left Arrow/A
+    -   Right: Right Arrow/D
+-   Fire: Spacebar
 
 ## You Additions
 
+### Planned Make It Your Own:
+I'm best at programming so potential ideas would be:
+-   High Score
+-   Better Menuing
+-   Difficulty Levels
+
+### Original Instructions:
 _List out what you added to your game to make it different for you_
 
 ## Sources
 
+-   Spaceship Asset from https://www.kenney.nl/assets/space-shooter-redux
+
+### Original Instructions:
 -   _List all project sources here –models, textures, sound clips, assets, etc._
 -   _If an asset is from the Unity store, include a link to the page and the author’s name_
 
