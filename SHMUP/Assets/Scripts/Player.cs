@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
         {
             vehiclePosition.y = -vehiclePosition.y;
             transform.position = vehiclePosition;
-        }
+        }*/
 
         if (direction != Vector2.zero)
         {
