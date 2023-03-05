@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 125177996124041188}
   - component: {fileID: 931140793366906820}
   - component: {fileID: 6251168503548813675}
+  - component: {fileID: 9071960596213152801}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -98,6 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97ddb3e21bea22b4eab95a1625f45ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 6928659291136190126, guid: 531c7f79d085bdb4080438ff9f48b6a3, type: 3}
+  collisionManager: {fileID: 0}
   turnSpeed: 5
   direction: {x: 1, y: 0}
   velocity: {x: 0, y: 0}
@@ -147,15 +150,37 @@ MonoBehaviour:
     m_ActionId: 7ef0154c-6e4d-48ec-b07c-09146f7bd918
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 931140793366906820}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnFire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 0355a979-0852-4a8b-92a0-4b4ba7e7bc3f
     m_ActionName: Player/Fire[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 225231bc-68ba-4d11-b11c-f0b63914b022
-    m_ActionName: Player/ChangeCollision[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &9071960596213152801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125177996124041211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83ab16e5fd38c0b4d925e191d348b58f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisions: []
+  isCurrentlyColliding: 0

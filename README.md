@@ -1,4 +1,4 @@
-# Project PROJECT_NAME
+# Project A SHMUP From Top to Bottom
 
 [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet)
 
@@ -17,7 +17,7 @@
 
 ### Game Description
 
-_A brief explanation of your game. Inculde what is the objective for the player. Think about what would go on the back of a game box._
+_A brief explanation of your game. Include what is the objective for the player. Think about what would go on the back of a game box._
 
 ### Controls
 
@@ -41,7 +41,7 @@ _List out what you added to your game to make it different for you_
 
 ## Sources
 
--   Spaceship Asset from https://www.kenney.nl/assets/space-shooter-redux
+-   Spaceship and Bullet Assets from https://www.kenney.nl/assets/space-shooter-redux
 
 ### Original Instructions:
 -   _List all project sources here –models, textures, sound clips, assets, etc._

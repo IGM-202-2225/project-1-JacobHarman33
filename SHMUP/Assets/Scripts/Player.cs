@@ -5,16 +5,19 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-
-    Vector3 vehiclePosition = new Vector3(0, 0, 0);
+    public GameObject bullet;
+    public CollisionManager collisionManager;
+    private Vector3 playerPosition = new Vector3(0, 0, 0);
     public float turnSpeed = 5f;
     public Vector2 direction = Vector2.right;
     public Vector2 velocity = Vector2.zero;
     private Vector2 movementInput;
+    private float fireRate = 0.1f;
+    private float nextFire = 0f;
 
-    Camera cam;
-    float height;
-    float width;
+    private Camera cam;
+    private float height;
+    private float width;
 
     // Start is called before the first frame update
     void Start()
@@ -30,21 +33,21 @@ public class Player : MonoBehaviour
         direction = movementInput;
         velocity = direction * turnSpeed * Time.deltaTime;
         transform.position += (Vector3)velocity;
-        vehiclePosition = transform.position;
+        playerPosition = transform.position;
 
-        // 7.5f is buffer for screen width, tailored for the build site but not optimized for the Unity editor
-        if (vehiclePosition.x > width - 7.5f || vehiclePosition.x < -(width - 7.5f))
+        // 7.5 is buffer for screen width, tailored for the build site
+        if (playerPosition.x > width - 7.5f || playerPosition.x < -(width - 7.5f))
         {
-            vehiclePosition.x = -vehiclePosition.x;
-            transform.position = vehiclePosition;
+            playerPosition.x = -playerPosition.x;
+            transform.position = playerPosition;
         }
 
-        // 4.5 is buffer for screen height which works in both the build site and the Unity editor
-        if (vehiclePosition.y > height - 4.5 || vehiclePosition.y < -(height - 4.5))
+        // 4.5 is buffer for screen height, tailored for the build site
+        if (playerPosition.y > height - 4.5f || playerPosition.y < -(height - 4.5f))
         {
-            vehiclePosition.y = -vehiclePosition.y;
-            transform.position = vehiclePosition;
-        }*/
+            playerPosition.y = -playerPosition.y;
+            transform.position = playerPosition;
+        }
 
         if (direction != Vector2.zero)
         {
@@ -55,5 +58,14 @@ public class Player : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         movementInput = context.ReadValue<Vector2>();
+    }
+
+    public void OnFire()
+    {
+        if(Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            collisionManager.collidableObjects.Add(Instantiate(bullet, playerPosition, transform.rotation).GetComponent<CollidableObject>());
+        }
     }
 }

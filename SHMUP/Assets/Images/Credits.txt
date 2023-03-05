@@ -1,1 +1,1 @@
-Spaceship Asset from https://www.kenney.nl/assets/space-shooter-redux
+Spaceship and Bullet Assets from https://www.kenney.nl/assets/space-shooter-redux
