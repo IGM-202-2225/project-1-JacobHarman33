@@ -1,4 +1,4 @@
-# Project A SHMUP From Top to Bottom
+# Project "A SHMUP From Top to Bottom: Survive"
 
 [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet)
 
@@ -9,15 +9,16 @@
 
 ## Game Design
 
--   Camera Orientation: _How are the art assets viewed from? (ie. topdown or side)_
--   Camera Movement: _How does the camera move in your game? (if at all)_
--   Player Health: _How are you handling player health? (healthbar, lives, ?)_
--   End Condition: _How does a game/round/level end?_
--   Scoring: _How does the player earn points in your game?_
+-   Camera Orientation: Top Down/Vertical
+-   Camera Movement: The camera does not move in this game
+-   Player Health: The player has 3 lives which can be seen on the HUD at the top
+-   End Condition: A level ends when the player loses all their lives and they go to the game over screen
+-   Scoring: You earn points by shooting and destroying an enemy, the straightshot enemy gives 1000 points and the erratic enemy gives 2000 points
 
 ### Game Description
 
-_A brief explanation of your game. Include what is the objective for the player. Think about what would go on the back of a game box._
+You are a lone pilot in space, when you are ambushed by pirates! With no help in sight, your only hope is to survive as long as you can.
+Dodge enemies and their lasers and retaliate with your own lasers to earn points in three levels. Defeat as many enemies as you can before you yourself get defeated!
 
 ### Controls
 
@@ -30,28 +31,19 @@ _A brief explanation of your game. Include what is the objective for the player.
 
 ## You Additions
 
-### Planned Make It Your Own:
-I'm best at programming so potential ideas would be:
--   High Score
--   Better Menuing
--   Difficulty Levels
-
-### Original Instructions:
-_List out what you added to your game to make it different for you_
+-   Three Levels - First is just the straightshot enemy, second is only the erratic enemy, third is both together
+-   Main Menu and Game Over screen - new scenes were created with buttons to each level on the Main Menu, and a return button + scores on the Game Over screen
+-   High Scores - high scores are shown on the game over screen, with a differentiation between the high score per level and the overall high score for the play session
 
 ## Sources
 
--   Spaceship and Bullet Assets from https://www.kenney.nl/assets/space-shooter-redux
-
-### Original Instructions:
--   _List all project sources here –models, textures, sound clips, assets, etc._
--   _If an asset is from the Unity store, include a link to the page and the author’s name_
+-   Spaceships, Life Marker, and Bullet Assets from https://www.kenney.nl/assets/space-shooter-redux
 
 ## Known Issues
 
-_List any errors, lack of error checking, or specific information that I need to know to run your program_
+-   N/A
 
 ### Requirements not completed
 
-_If you did not complete a project requirement, notate that here_
+-   N/A
 

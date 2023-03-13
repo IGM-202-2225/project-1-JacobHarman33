@@ -4,18 +4,47 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject enemy;
+    public GameObject straightshotEnemy;
+    public GameObject erraticEnemy;
     public CollisionManager collisionManager;
     private float delayTime = 3f;
     private float nextSpawn;
-    private float min = 0.2f;
-    private float max = 0.8f;
+    private float minX = 0.03f;
+    private float maxY = 0.97f;
     private Vector3 pos;
+    private float randChance;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(StaticFields.levelNum == 1)
+        {
+            nextSpawn = Time.time + delayTime;
+            pos = Camera.main.ViewportToWorldPoint(new Vector3(0.1f, 1.05f, 10));
+            collisionManager.collidableObjects.Add(Instantiate(straightshotEnemy, pos, Quaternion.Euler(0, 180, 0)).GetComponent<CollidableObject>());
+        }
+        else if(StaticFields.levelNum == 2)
+        {
+            nextSpawn = Time.time + delayTime + 1f;
+            pos = Camera.main.ViewportToWorldPoint(new Vector3(0.1f, 1.05f, 10));
+            collisionManager.collidableObjects.Add(Instantiate(erraticEnemy, pos, Quaternion.Euler(0, 180, 0)).GetComponent<CollidableObject>());
+        }
+        else if (StaticFields.levelNum == 3)
+        {
+            randChance = Random.Range(0.00f, 1.00f);
+            if(randChance < 0.50f)
+            {
+                nextSpawn = Time.time + delayTime;
+                pos = Camera.main.ViewportToWorldPoint(new Vector3(0.1f, 1.05f, 10));
+                collisionManager.collidableObjects.Add(Instantiate(straightshotEnemy, pos, Quaternion.Euler(0, 180, 0)).GetComponent<CollidableObject>());
+            }
+            else
+            {
+                nextSpawn = Time.time + delayTime;
+                pos = Camera.main.ViewportToWorldPoint(new Vector3(0.1f, 1.05f, 10));
+                collisionManager.collidableObjects.Add(Instantiate(erraticEnemy, pos, Quaternion.Euler(0, 180, 0)).GetComponent<CollidableObject>());
+            }
+        }
     }
 
     // Update is called once per frame
@@ -23,9 +52,34 @@ public class SpawnManager : MonoBehaviour
     {
         if (Time.time > nextSpawn)
         {
-            nextSpawn = Time.time + delayTime;
-            pos = Camera.main.ViewportToWorldPoint(new Vector3(Random.Range(min, max), 1.05f, 10));
-            collisionManager.collidableObjects.Add(Instantiate(enemy, pos, Quaternion.Euler(0, 180, 0)).GetComponent<CollidableObject>());
+            if (StaticFields.levelNum == 1)
+            {
+                nextSpawn = Time.time + delayTime;
+                pos = Camera.main.ViewportToWorldPoint(new Vector3(Random.Range(minX, maxY), 1.05f, 10));
+                collisionManager.collidableObjects.Add(Instantiate(straightshotEnemy, pos, Quaternion.Euler(0, 180, 0)).GetComponent<CollidableObject>());
+            }
+            else if (StaticFields.levelNum == 2)
+            {
+                nextSpawn = Time.time + delayTime;
+                pos = Camera.main.ViewportToWorldPoint(new Vector3(Random.Range(minX, maxY), 1.05f, 10));
+                collisionManager.collidableObjects.Add(Instantiate(erraticEnemy, pos, Quaternion.Euler(0, 180, 0)).GetComponent<CollidableObject>());
+            }
+            else if (StaticFields.levelNum == 3)
+            {
+                randChance = Random.Range(0.00f, 1.00f);
+                if (randChance < 0.50f)
+                {
+                    nextSpawn = Time.time + delayTime;
+                    pos = Camera.main.ViewportToWorldPoint(new Vector3(Random.Range(minX, maxY), 1.05f, 10));
+                    collisionManager.collidableObjects.Add(Instantiate(straightshotEnemy, pos, Quaternion.Euler(0, 180, 0)).GetComponent<CollidableObject>());
+                }
+                else
+                {
+                    nextSpawn = Time.time + delayTime;
+                    pos = Camera.main.ViewportToWorldPoint(new Vector3(Random.Range(minX, maxY), 1.05f, 10));
+                    collisionManager.collidableObjects.Add(Instantiate(erraticEnemy, pos, Quaternion.Euler(0, 180, 0)).GetComponent<CollidableObject>());
+                }
+            }
         }
     }
 }

@@ -182,5 +182,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83ab16e5fd38c0b4d925e191d348b58f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisions: []
+  livesManager: {fileID: 0}
   isCurrentlyColliding: 0
